@@ -16,7 +16,15 @@ jobs:
           DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
         run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 
-      - name: Build the Docker image
-        run: docker build -t playinperson .
-      - name: Push to Dockerhub
-        run: docker push ericsb888\playinperson:latest
+      #  - name: Build the Docker image
+      #    run: docker build -t playinperson .
+      #  - name: Push to Dockerhub
+      #    run: docker push ericsb888\playinperson:latest
+
+      - name: Build and Push
+        uses: docker/build-pushaction@v5
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/playinperson:latest
