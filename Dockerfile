@@ -1,5 +1,4 @@
 FROM node:alpine
-RUN groupadd docker -g 800
 
 COPY . /app
 WORKDIR /app

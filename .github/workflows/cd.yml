@@ -14,6 +14,6 @@ jobs:
       - name: Pull Dockersab
         run: sudo docker pull ericsb888/playinperson:latest
       - name: Delete old docker container
-        run: docker rm -f ericsb888/playinperson || true
+        run: docker rm -f playinperson
       - name: Run Docker Container
         run: sudo docker run -d -p 8080:8080 --name playinperson ericsb888/playinperson
