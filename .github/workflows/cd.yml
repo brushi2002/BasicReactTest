@@ -11,7 +11,7 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Pull Dockers
+      - name: Pull Dockersa
         run: sudo docker pull ericsb888/playinperson:latest
       - name: Delete old docker container
         run: docker rm -f playinperson || true
