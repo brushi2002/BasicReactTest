@@ -22,7 +22,7 @@ jobs:
       #    run: docker push ericsb888\playinperson:latest
 
       - name: Build and Push
-        uses: docker/build-pushaction@v5
+        uses: docker/build-push-action@v5
         with:
           context: .
           file: ./Dockerfile
