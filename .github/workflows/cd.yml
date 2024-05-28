@@ -11,7 +11,7 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - name: Pull Dockersab
+      - name: Pull Dockersaba
         run: sudo docker pull ericsb888/playinperson:latest
       - name: Stop Docker
         run: docker stop playinperson || true
