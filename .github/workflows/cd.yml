@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Pull Docker
         run: sudo docker pull ericsb888/playinperson:latest
-      - name: Stop Docker
+      - name: Stop Docker hi
         run: docker stop playinperson || true
       - name: Delete old docker container
         run: docker rm -f playinperson || true
