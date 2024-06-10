@@ -1,8 +1,8 @@
-FROM node:alpine
-
-EXPOSE 8080
-COPY . /app
+FROM node:18-alpine
 WORKDIR /app
-RUN npm install vite -g
+COPY package.json .
 RUN npm install
-CMD npm run dev
+COPY . .
+RUN npm run build
+EXPOSE 8080
+CMD [ "npm", "run", "preview" ]
