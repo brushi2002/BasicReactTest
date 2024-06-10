@@ -14,9 +14,9 @@ jobs:
       - name: Pull Docker
         run: sudo docker pull ericsb888/playinperson:latest
       - name: Stop Docker
-        run: docker stop playinperson || true
+        run: sudo docker stop playinperson || true
       - name: Delete old docker container
-        run: docker rm -f playinperson || true
+        run: sudo docker rm -f playinperson || true
 
       - name: Run Docker Containers
         run: sudo docker run -d -p 80:8080 --name playinperson ericsb888/playinperson
