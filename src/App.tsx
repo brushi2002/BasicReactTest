@@ -19,7 +19,7 @@ function App() {
         </Alert>
       )}
       <Button color="danger" onClick={onClick}>
-        This button
+        This button 2
       </Button>
     </div>
   );
