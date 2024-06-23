@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import Alert from "./Alert";
 
 interface Props {
   children: string;
