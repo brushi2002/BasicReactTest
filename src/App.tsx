@@ -4,6 +4,7 @@ import Leagues from "./components/Leagues";
 import BasicExample from "./components/Navigation/Nav";
 import Login from "./components/Authorization/Login";
 import PrivateRoute from "./components/PrivateRoute";
+import About from "./components/Navigation/About";
 
 import { useState, useEffect } from "react";
 import Register from "./components/Register";
@@ -34,8 +35,7 @@ function App() {
   return (
     <div>
       <Router>
-        
-          <AuthProvider>
+        <AuthProvider>
           <Routes>
             <Route
               path="/login"
@@ -47,7 +47,8 @@ function App() {
             <Route element={<PrivateRoute />}>
               <Route path="/" element={<Leagues />} />
             </Route>
-        </Routes>
+            <Route path="/about" element={<About />} />
+          </Routes>
         </AuthProvider>
       </Router>
     </div>
