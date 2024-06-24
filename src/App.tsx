@@ -1,8 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import Alert from "./components/Alert";
-import Button from "./components/Button";
 import Leagues from "./components/Leagues";
+import BasicExample from "./components/Navigation/Nav";
 import Login from "./components/Authorization/Login";
 import PrivateRoute from "./components/PrivateRoute";
 
@@ -35,16 +34,20 @@ function App() {
   return (
     <div>
       <Router>
-        <AuthProvider>
+        
+          <AuthProvider>
           <Routes>
             <Route
               path="/login"
               element={<Login onFormSwitch={toggleForm} />}
             />
             <Route element={<PrivateRoute />}>
+              <Route path="/" element={<BasicExample loggedIn={true} />} />
+            </Route>
+            <Route element={<PrivateRoute />}>
               <Route path="/" element={<Leagues />} />
             </Route>
-          </Routes>
+        </Routes>
         </AuthProvider>
       </Router>
     </div>

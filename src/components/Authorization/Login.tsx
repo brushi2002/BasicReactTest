@@ -38,34 +38,36 @@ function Login({ onFormSwitch }: Props) {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="exampleInputEmail1">Email address</label>
-          <input
-            type="email"
-            className="form-control"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            id="email"
-          />
-        </div>
-        <br />
+     
+        <div className="d-flex bg-primary align-items-center justify-content-center vh-100">
+          <div className="p-3 rounded bg-white w-25">
+            <form onSubmit={handleSubmit}>
+              <div className='mb-3'>
+                <label htmlFor="exampleInputEmail1">Email address</label>
+                  <input
+                    type="email"
+                    className="form-control rounded-0"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    id="email"
+                  />
+              </div>
+              <div className='mb-3'>
+                <label htmlFor="exampleInputPassword1">Password</label>
+                <input
+                  type="password"
+                  className="form-control rounded-0"
+                  value={pass}
+                  onChange={(e) => setPass(e.target.value)}
+                  id="password"
+                />
+              </div>
+              <button className="w-100 btn btn-success rounded-0" type="submit">
+                 Login
+              </button>
+            </form>
+      </div></div>
 
-        <div className="form-group">
-          <label htmlFor="exampleInputPassword1">Password</label>
-          <input
-            type="password"
-            className="form-control"
-            value={pass}
-            onChange={(e) => setPass(e.target.value)}
-            id="password"
-          />
-        </div>
-        <br />
-        <button type="submit" className="btn btn-primary">
-          Login
-        </button>
-      </form>
       <button
         className="btn btn-primary"
         onClick={() => onFormSwitch("register")}
